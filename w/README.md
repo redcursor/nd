@@ -17,4 +17,4 @@ And please do not say why did not you use PowerShell! You know what.
 
 More about Networking Command in Windows:  
  - [How to use ping, winipcfg, and other network commands](https://www.computerhope.com/issues/ch000444.htm)
- - [Windows commands]https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands
+ - [Windows commands](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands)
