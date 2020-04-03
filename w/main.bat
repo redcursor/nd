@@ -13,13 +13,13 @@ set TITLE=Network Diagnostic (Windows user)
 set OUTPUT=result.txt
 
 :: title , date , time
-title %TITLE%
-echo %TITLE% > %OUTPUT%
+title %title%
+echo %title% > %OUTPUT%
 echo. >> %OUTPUT%
-echo Start date: %DATE%
-echo Start date: %DATE%  >> %OUTPUT%
-echo Start time: %TIME%
-echo Start time: %TIME% >> %OUTPUT%
+echo Test ran att: %DATE%
+echo Test ran att: %DATE%  >> %OUTPUT%
+echo Test started at %TIME%
+echo Test started at %TIME% >> %OUTPUT%
 echo.
 echo. >> %OUTPUT%
 
@@ -34,6 +34,18 @@ echo Domain name: %DN% >> %OUTPUT% 2>&1
 echo Ip Address: %IP%  >> %OUTPUT% 2>&1
 echo. >> %OUTPUT%
 echo. >> %OUTPUT%
+echo.
+
+:: check the default gateway
+echo | set /p=check default gateway ... 
+call _default_gateway_.bat >> %OUTPUT% 2>&1
+call :perror %errorlevel%
+echo.
+
+:: check DNS server's setup
+echo | set /p=check DNS Servers ... 
+call _dns_server_.bat >> %OUTPUT% 2>&1
+call :perror %errorlevel%
 echo.
 
 :: flush DNS cache
